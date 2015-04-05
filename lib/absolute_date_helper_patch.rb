@@ -18,7 +18,7 @@ module AbsoluteDateHelperPatch
       text = format_date(time)
       tip_text = format_time(time)
       if @project
-        link_to(text, {:controller => 'activities', :action => 'index', :id => @project, :from => time.to_date}, :title => tip_text).html_safe
+        link_to(tip_text, {:controller => 'activities', :action => 'index', :id => @project, :from => time.to_date}, :title => tip_text).html_safe
       else
         content_tag('acronym', text, :title => tip_text).html_safe
       end
